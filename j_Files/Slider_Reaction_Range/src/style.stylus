@@ -1,0 +1,291 @@
+//  This pen built to use in a survey
+//  I built for Nucubuc on:
+//  http://nucubuc.yahiarefaiea.com/survey
+
+//  VARIABLES
+//  SPACING
+baseline= 28px
+align= left
+align-alt= right
+feelingHeight= 251px
+questionWidth= baseline*9.75
+
+//  COLORS
+magenta= #c657a0
+nuc1= rgba(248, 0, 255, .5)
+nuc2= rgba(241, 90, 34, .5)
+nuc3= rgba(0, 174, 239, .5)
+nuc4= rgba(234, 234, 0, .5)
+background= white
+border= #ddd
+text-dark= #464646
+text-default= #727272
+selection-bg= magenta
+selection-color= white
+
+//  TRANSITION
+step= .03
+pattern= 1.16
+duration= .5s
+durationAlt= duration*3
+easing= cubic-bezier(0.190,1.000,0.220,1.000)
+
+//  NUCUBUC
+nucubuc-width= baseline*3
+
+//  RANGE
+range-margin= baseline/2
+range-height= 6px
+range-track-color= border
+range-progress-color= magenta
+range-thumb-size= 16px
+range-thumb-shadow= 0 0 0 7px rgba(198, 87, 160, .21)
+range-label-height= baseline*.75
+range-label-margin= baseline*.25
+
+
+//  MIXINS
+//  ABSOLUTE
+makeAbsolute(tp=0, al=0, btm=auto, alt=auto)
+  position: absolute
+  if(tp!=auto)
+    top: tp
+  if(al!=auto)
+    {align}: al
+  if(btm!=auto)
+    bottom: btm
+  if(alt!=auto)
+    {align-alt}: alt
+
+//  TRANSITION
+hasTransition(dur=duration, dly=0, d=0)
+  transition: all (dur+d) easing unit(dly+d, 's')
+multiTransition(min, max, dur=duration, dly=0)
+  d= 0
+  for i in min..max
+    d= (d+step)*pattern
+    &:nth-child({i})
+      hasTransition: dur dly d
+
+//  NUCUBUC
+symbol(a, b, c)
+  top: unit(a, px)
+  left: unit(b, px)
+  background-color: c
+
+//  RANGE
+rangeTrack()
+  width: 100%
+  height: range-height
+  border: none
+  border-radius: (range-height/2)
+  background-color: range-track-color
+rangeThumb()
+  width: range-thumb-size
+  height: range-thumb-size
+  border: 0
+  border-radius: 50%
+  hasTransition()
+  box-shadow: range-thumb-shadow
+  background-color: range-progress-color
+rangeLongShadow(color)
+  size= -((range-thumb-size - range-height)/2)
+  val= -8px 0 0 size color
+  for i in (9..(273 - 8 - 3))
+    val= val, unit(- i, 'px') 0 0 size color
+  return val
+
+
+// SETUPS
+*, *:before, *:after
+  box-sizing: border-box
+
+html, body
+  width: 100%
+  height: 100%
+  min-height: feelingHeight + baseline*2*2
+
+body
+  position: relative
+  direction: ltr
+  text-align: left
+  font-family: 'Muli', sans-serif
+  font-size: 14px
+  font-weight: 600
+  line-height: baseline
+  background-color: background
+  color: text-default
+  -webkit-font-smoothing: antialiased
+
+::selection
+  background: selection-bg
+  color: selection-color
+::-moz-selection
+  background: selection-bg
+  color: selection-color
+
+ul, ol, li
+  list-style: none
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+
+//  NUCUBUC
+#nucubuc
+  makeAbsolute: 50% 50%
+  width: nucubuc-width
+  height: nucubuc-width
+  margin-top: -(feelingHeight/2)
+  margin-{align}: -(nucubuc-width/2)
+  hasTransition: durationAlt
+  div, svg
+    display: block
+    makeAbsolute()
+
+//  SYMBOL
+#nucubuc .symbol
+  width: nucubuc-width
+  height: nucubuc-width
+  > div
+    width: 78px
+    height: 78px
+    border-radius: 50%
+    &:nth-child(1)
+      symbol: 0 6 nuc4
+    &:nth-child(2)
+      symbol: 1 0 nuc3
+    &:nth-child(3)
+      width: 74px
+      height: 74px
+      symbol: 6 3 nuc2
+    &:nth-child(4)
+      symbol: 6 5 nuc1
+
+//  SVG
+#nucubuc svg
+  fill: none
+  stroke: #fff
+  stroke-linecap: round
+  stroke-width: 3
+  opacity: 1
+  hasTransition: durationAlt
+  .eyes
+    fill: #fff
+
+
+//  RANGE
+input[type=range]
+  overflow: hidden
+  display: block
+  width: 100%
+  height: range-height + range-margin*2
+  margin: 0
+  padding: 0
+  
+  appearance: none
+  cursor: move
+  cursor: grab
+  cursor: -moz-grab
+  cursor: -webkit-grab
+  &:active
+    cursor: grabbing
+    cursor: -moz-grabbing
+    cursor: -webkit-grabbing
+  
+  &,
+  &:hover,
+  &:focus
+    outline: 0
+  
+  //  MOZ
+  &::-moz-range-track,
+  &::-moz-range-progress
+    rangeTrack()
+  &::-moz-range-progress
+    background-color: range-progress-color
+  &::-moz-range-thumb
+    rangeThumb()
+  &::-moz-focus-outer
+    border: 0
+  
+  //  WEBKIT
+  &::-webkit-slider-runnable-track
+    rangeTrack()
+  &::-webkit-slider-thumb
+    rangeThumb()
+    appearance: none
+    margin-top: ((range-height - range-thumb-size)/2)
+    box-shadow: range-thumb-shadow, rangeLongShadow(range-progress-color)
+  
+  //  MS
+  &::-ms-track
+    rangeTrack()
+  &::-ms-fill-upper
+    background-color: range-track-color
+  &::-ms-fill-lower
+    background-color: range-progress-color
+  &::-ms-thumb
+    rangeThumb()
+    margin-top: 0
+
+.range
+  padding-bottom: range-label-height + range-label-margin + range-margin
+  ul
+    makeAbsolute: auto 0 range-label-height 0
+    li
+      makeAbsolute: range-label-height 0
+      line-height: range-label-height
+      font-weight: 700
+      color: range-progress-color
+      opacity: 0
+      hasTransition()
+      cursor: default
+      &:last-child
+        {align}: auto
+        {align-alt}: 0
+      &:not(:first-child):not(:last-child)
+        transform: translateX(-50%)
+      for i in ((5 - 4)..(5 - 1))
+        &:nth-child({i})
+          {align}: (100%/(5 - 1))*(i - 1)
+      &.current
+        top: 0
+        opacity: 1
+        hasTransition: duration step
+        cursor: auto
+
+
+//  SPANS
+.spans
+  white-space: nowrap
+.spans > span
+  display: inline-block
+  opacity: 0
+  transform: translateY(baseline)
+  multiTransition: 1 15 duration step
+  cursor: default
+  &:not(:last-child)
+    margin-{align-alt}: 3px
+.spans:nth-child(2) > span
+  multiTransition: 1 15 duration step*2
+.current .spans > span
+  z-index: 1
+  opacity: 1
+  transform: translateY(0) !important
+  cursor: auto
+
+
+//  QUESTION
+#question
+  makeAbsolute: 50% 50%
+  width: questionWidth
+  margin-{align}: -(questionWidth/2)
+  .small
+    margin-bottom: baseline*.25
+    font-size: 12px
+    line-height: baseline*.75
+  .question
+    margin-bottom: baseline*.75
+    font-weight: 700
+    color: text-dark

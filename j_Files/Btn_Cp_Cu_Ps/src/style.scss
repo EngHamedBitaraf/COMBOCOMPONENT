@@ -1,0 +1,33 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  color: #43425d;
+}
+
+.multi-button{
+  border: 5px solid #43425d;
+  //padding: 2px;
+  
+  button{
+    background-color: white;
+    border: none;
+    margin: 0;
+    padding: 1em 2em;
+    font-weight: bold;
+    outline: none;
+    font-size: 1.5em;
+    color: #43425d;
+    
+    &:hover{
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+  }
+}
+
+.active{
+  background-color: #43425d !important;
+  color: whitesmoke !important;
+}

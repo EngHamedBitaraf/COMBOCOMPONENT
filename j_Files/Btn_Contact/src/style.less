@@ -1,0 +1,217 @@
+/* Main vars */
+@pen-bg: #e7f5ee;
+
+/* Contact Button vars */
+@btn-bg: #fff;
+@btn-color: #3b5998;
+@btn-active-color: #cfd2d9;
+@btn-border-radius: 100px;
+@btn-height: 72px;
+@btn-width: 200px;
+@btn-active-height: 470px;
+@btn-active-width: 460px;
+@btn-active-border-radius: 50px;
+
+/* Send Button vars*/
+@send-btn-bg: #00e6ac;
+@send-btn-color: #fff;
+@send-btn-active-color: #004d39;
+@send-btn-border-radius: 100px;
+@send-btn-height: 48px;
+@send-btn-width: 120px;
+@send-btn-active-height: 48px;
+@send-btn-active-width: 120px;
+@send-btn-active-border-radius: 50px;
+
+/* Close icon */
+@close-color: #cfd2d9;
+/* Close msg icon */
+@msg-close-color: #004d39;
+
+/* Transition vars */
+@transition: all 0.25s ease-in-out;
+
+/* Input */
+@input-color: #b2b5bc;
+@input-bg: #f3f6fb;
+
+/* Message */
+@msg-color: #008060;
+@msg-bg: #00e6ac;
+
+/* Mixins */
+.center {
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.no-center {
+	transform: translateX(0) translateY(0);
+}
+
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+	background-color: @pen-bg;
+	font-family: "Montserrat";
+}
+/* Contact Button Start*/
+.contact-btn {
+	position: absolute;
+	background-color: @btn-bg;
+	border-radius: @btn-border-radius;
+	width: @btn-width;
+	height: @btn-height;
+	box-shadow: 0 5px 10px rgba(0, 0, 40, 0.03);
+	transition: all 0.4s cubic-bezier(0.3, 0, 0, 1.3);
+	overflow: hidden;
+	cursor: pointer;
+	.center;
+}
+
+.contact-btn .cta {
+	position: absolute;
+	color: @btn-color;
+	text-transform: uppercase;
+	font-size: 16px;
+	letter-spacing: 1px;
+	transition: @transition;
+	.center;
+}
+
+.contact-btn .close {
+	position: absolute;
+	right: 38px;
+	top: 31px;
+	cursor: pointer;
+	color: @close-color;
+	font-size: 20px;
+	opacity: 0;
+	transition: all 0.4s cubic-bezier(0.3, 0, 0, 1.3);
+	transform: rotate(-45deg);
+	transform-origin: center center;
+}
+
+.contact-btn .fake-input {
+	width: 80%;
+	padding-top: 15px;
+	transform: scale(0.7) translateX(10px) translateY(-10px);
+	transition: @transition;
+	transform-origin: 0% 0%;
+	opacity: 0;
+	margin: 10px auto 0 auto;
+	background-color: @input-bg;
+	color: @input-color;
+	border-radius: 10px;
+	padding: 15px;
+	font-size: 15px;
+	overflow: hidden;
+}
+
+.clicked {
+	width: @btn-active-width;
+	height: @btn-active-height;
+	border-radius: @btn-active-border-radius;
+	cursor: auto;
+	overflow: visible;
+}
+
+.contact-btn.clicked .cta {
+	left: 40px;
+	top: 30px;
+	.no-center;
+	color: #cfd2d9;
+}
+
+.contact-btn.clicked .close {
+	opacity: 1;
+	transform: rotate(0deg);
+}
+.contact-btn.clicked .fake-input {
+	transform: scale(1) translateX(0) translateY(0);
+	opacity: 1;
+	position: relative;
+	top: 50px;
+}
+/* Contact Button End */
+/* Send Button Start */
+.send-btn {
+	position: absolute;
+	background-color: @send-btn-bg;
+	border-radius: @send-btn-border-radius;
+	width: @send-btn-width;
+	height: @send-btn-height;
+	box-shadow: 0 5px 10px rgba(0, 0, 40, 0.03);
+	transition: all 0.4s cubic-bezier(0.3, 0, 0, 1.3);
+	overflow: hidden;
+	cursor: pointer;
+	top: 400px;
+	left: 300px;
+}
+
+.send-btn .snd {
+	position: absolute;
+	color: @send-btn-color;
+	text-transform: uppercase;
+	font-size: 16px;
+	letter-spacing: 1px;
+	transition: @transition;
+	.center;
+}
+
+.send-btn .msg-close {
+	position: absolute;
+	right: 18px;
+	top: 15px;
+	cursor: pointer;
+	color: @msg-close-color;
+	font-size: 20px;
+	opacity: 0;
+	transition: all 0.4s cubic-bezier(0.3, 0, 0, 1.3);
+	transform: rotate(-45deg);
+	transform-origin: center center;
+}
+
+.send-btn .msg {
+	width: 180%;
+	padding-top: 15px;
+	transform: scale(0.7) translateX(10px) translateY(-10px);
+	transition: @transition;
+	transform-origin: 0% 0%;
+	opacity: 0;
+	margin: 10px auto 0 auto;
+	background-color: @msg-bg;
+	color: @msg-color;
+	border-radius: 25px 25px 25px 1px;
+	padding: 15px;
+	font-size: 15px;
+	/*overflow: hidden;*/
+}
+
+.send-clicked {
+	width: @send-btn-active-width;
+	height: @send-btn-active-height;
+	border-radius: @send-btn-active-border-radius;
+	cursor: auto;
+	overflow: visible;
+}
+
+.send-btn.send-clicked .snd {
+	color: @send-btn-active-color;
+}
+
+.send-btn.send-clicked .msg-close {
+	opacity: 1;
+	transform: rotate(0deg);
+}
+.send-btn.send-clicked .msg {
+	transform: scale(1) translateX(0) translateY(0);
+	opacity: 1;
+	position: relative;
+	top: -127px;
+	left: 180px;
+	z-index: 999;
+}
+/* Send Button end*/

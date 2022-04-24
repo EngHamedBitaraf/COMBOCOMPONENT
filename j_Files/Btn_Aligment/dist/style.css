@@ -1,0 +1,252 @@
+html, body {
+  height: 100%;
+  font-family: "Lato", sans-serif;
+}
+
+.item {
+  width: 50%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  position: relative;
+}
+.item:before {
+  font-weight: bold;
+  font-size: 35px;
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  color: #333;
+}
+
+.item-1 {
+  background: #F0F0F0;
+}
+.item-1:before {
+  content: "#1";
+}
+.item-1 .wrap {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 37px;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0px 20px 61px -14px rgba(0, 0, 0, 0.2);
+}
+.item-1 .align {
+  display: inline-block;
+  margin-right: 35px;
+  cursor: pointer;
+}
+.item-1 .align span {
+  background: #E1E1E1;
+  display: block;
+  margin-bottom: 6px;
+  width: 27px;
+  height: 4px;
+  border-radius: 10px;
+}
+.item-1 .align span:last-child {
+  margin-bottom: 0;
+}
+.item-1 .align__left span:last-child {
+  width: 12px;
+  float: left;
+}
+.item-1 .align__center span:last-child {
+  width: 13px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.item-1 .align__right span:last-child {
+  width: 13px;
+  float: right;
+}
+.item-1 .align__justify {
+  margin-right: 0;
+}
+.item-1 .align-bar {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  margin-right: 0;
+  pointer-events: none;
+}
+.item-1 .align-bar span {
+  background: #383838;
+}
+
+.item-2 {
+  background: #D7DDE9;
+}
+.item-2:before {
+  content: "#2";
+}
+.item-2 .wrap {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px 37px;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0px 20px 61px -14px rgba(0, 0, 0, 0.2);
+}
+.item-2 .align {
+  background: #D7DDE9;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 0 15px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.item-2 .align img {
+  position: relative;
+  z-index: 2;
+}
+.item-2 .align::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #14D96A;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+.item-2 .align-compound:before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+}
+.item-2 .align-compound.active:before {
+  width: 100%;
+  height: 100%;
+}
+.item-2 .align-top:before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+}
+.item-2 .align-top.active:before {
+  width: 100%;
+}
+.item-2 .align-cross:before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+}
+.item-2 .align-cross.active:before {
+  width: 150%;
+  height: 150%;
+}
+.item-2 .align-exception:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+}
+.item-2 .align-exception.active:before {
+  height: 100%;
+}
+
+.item-3 {
+  width: 100%;
+  background: #E2EAF4;
+}
+.item-3:before {
+  content: "#3";
+}
+.item-3 .wrap {
+  background: #fff;
+  border-radius: 20px;
+  padding: 27px 35px;
+  width: 228px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0px 20px 61px -14px rgba(0, 0, 0, 0.2);
+}
+.item-3 .align {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+}
+.item-3 .align span {
+  background: #BFCCD7;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.item-3 .align .line {
+  width: 2px;
+  height: 30px;
+}
+.item-3 .align .square {
+  width: 8px;
+  height: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.item-3 .align .square-2 {
+  height: 12px;
+}
+.item-3 .align-left .line-2 {
+  left: 14px;
+}
+.item-3 .align-left .square-2 {
+  left: 14px;
+}
+.item-3 .align-center {
+  left: 4px;
+}
+.item-3 .align-center .line-1 {
+  left: 3px;
+}
+.item-3 .align-center .square-1 {
+  left: 0px;
+}
+.item-3 .align-center .line-2 {
+  left: 17px;
+}
+.item-3 .align-center .square-2 {
+  left: 14px;
+}
+.item-3 .align-right .line-1 {
+  left: 13px;
+}
+.item-3 .align-right .square-1 {
+  left: 7px;
+}
+.item-3 .align-right .line-2 {
+  left: 27px;
+}
+.item-3 .align-right .square-2 {
+  left: 21px;
+}
+.item-3 .align-bar {
+  position: absolute;
+  top: 27px;
+  left: 35px;
+  width: 100%;
+  opacity: 0;
+  margin-right: 0;
+  pointer-events: none;
+  margin: 0;
+}
+.item-3 .align-bar span {
+  background: #1C8BFD;
+}
