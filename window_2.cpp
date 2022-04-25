@@ -64,20 +64,40 @@ void window_2::ReadDBandDisplay(){
     while (query.next()) {
         ui->tableWidget->insertRow(rowCount);
 
+        ui->tableWidget->setColumnWidth(0,40);
+        ui->tableWidget->setColumnWidth(1,120);
+        ui->tableWidget->setColumnWidth(2,120);
+        ui->tableWidget->setColumnWidth(3,120);
+
+        ui->tableWidget->setRowHeight(0,50);
+        ui->tableWidget->setRowHeight(1,50);
+        ui->tableWidget->setRowHeight(2,50);
+        ui->tableWidget->setRowHeight(3,50);
+
+        ui->tableWidget->horizontalHeader()->setFixedHeight(40);
+
         QTableWidgetItem *ID = new QTableWidgetItem;
         QTableWidgetItem *Name = new QTableWidgetItem;
         QTableWidgetItem *Last_Name = new QTableWidgetItem;
         QTableWidgetItem *Gender = new QTableWidgetItem;
+
+
 
         ID->setText(query.value(0).toString());
         Name->setText(query.value(1).toString());
         Last_Name->setText(query.value(2).toString());
         Gender->setText(query.value(3).toString());
 
+
+        ID->setTextAlignment(Qt::AlignCenter);
+        Name->setTextAlignment(Qt::AlignCenter);
+        Last_Name->setTextAlignment(Qt::AlignCenter);
+        Gender->setTextAlignment(Qt::AlignCenter);
+
         QComboBox* GendCBox = new QComboBox();
 
         GendCBox->addItem(Gender->text());
-        GendCBox->setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 47, 64, 249), stop:1 rgba(255, 255, 255, 255));");
+        GendCBox->setStyleSheet("background-color: silver;");
 
 
         if(Gender->text()=="Male   "){
