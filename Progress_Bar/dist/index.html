@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+<script type="text/javascript" src="qrc:///qtwebchannel/qwebchannel.js"></script>
+  <title>CodePen - Custom Progress Bar Css3 &amp; JQuery</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Progress Bar Css3 & JQuery</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+
+
+
+	<div class="container">	
+		<i>0%</i>	
+		<div class="Loading">
+			<span data-charge='100'></span>
+		</div>
+	</div>	
+
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+        var backend;
+
+        window.onload = function()
+        {
+            new QWebChannel(qt.webChannelTransport, function(channel) {
+                backend = channel.objects.backend;
+                });
+            }
+		$(function(){
+
+			$('.Loading span').animate({
+				width : $('.Loading span').data('charge') + '%'
+                        },backend.send_Time);
+
+			var getCounter = parseInt($('.container i').text());
+
+			var MyCounter = setInterval(function(){
+				if(getCounter !== 101){
+					$('.container i').text(getCounter++ + '%');
+				}else{
+					clearInterval(MyCounter);
+					$('.container i').text('Finished');
+				};
+	
+                        },backend.send_Time/100);
+
+		});
+                //alert(backend.send_Time);
+	</script>
+
+	
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>

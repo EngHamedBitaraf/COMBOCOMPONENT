@@ -1,8 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+#include <QQuickView>
+#include <QWidget>
 
 #include <QMainWindow>
-#include <QtQuickWidgets/QQuickWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,10 +17,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-
 private:
     Ui::MainWindow *ui;
-    QQuickWidget *qml_quickwidget;
-
+    QQuickView* qml;
+    QWidget *widget;
 };
 #endif // MAINWINDOW_H

@@ -1,50 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
-        <file>My_btn.qml</file>
-        <file>tick.png</file>
-        <file>up.png</file>
-        <file>Main_Back_G.qml</file>
-        <file>Back_G.qml</file>
-        <file>Back_G/css/colpick.css</file>
-        <file>Back_G/css/jquery.nouislider.css</file>
-        <file>Back_G/css/style.css</file>
-        <file>Back_G/css/style.less</file>
-        <file>Back_G/img/samples/small/sample-1.jpg</file>
-        <file>Back_G/img/samples/small/sample-10.jpg</file>
-        <file>Back_G/img/samples/small/sample-11.jpg</file>
-        <file>Back_G/img/samples/small/sample-12.jpg</file>
-        <file>Back_G/img/samples/small/sample-2.jpg</file>
-        <file>Back_G/img/samples/small/sample-3.jpg</file>
-        <file>Back_G/img/samples/small/sample-4.jpg</file>
-        <file>Back_G/img/samples/small/sample-5.jpg</file>
-        <file>Back_G/img/samples/small/sample-6.jpg</file>
-        <file>Back_G/img/samples/small/sample-7.jpg</file>
-        <file>Back_G/img/samples/small/sample-8.jpg</file>
-        <file>Back_G/img/samples/small/sample-9.jpg</file>
-        <file>Back_G/img/samples/sample-1.jpg</file>
-        <file>Back_G/img/samples/sample-10.jpg</file>
-        <file>Back_G/img/samples/sample-11.jpg</file>
-        <file>Back_G/img/samples/sample-12.jpg</file>
-        <file>Back_G/img/samples/sample-2.jpg</file>
-        <file>Back_G/img/samples/sample-3.jpg</file>
-        <file>Back_G/img/samples/sample-4.jpg</file>
-        <file>Back_G/img/samples/sample-5.jpg</file>
-        <file>Back_G/img/samples/sample-6.jpg</file>
-        <file>Back_G/img/samples/sample-7.jpg</file>
-        <file>Back_G/img/samples/sample-8.jpg</file>
-        <file>Back_G/img/samples/sample-9.jpg</file>
-        <file>Back_G/img/screenshot.jpg</file>
-        <file>Back_G/lib/builder_scripts.js</file>
-        <file>Back_G/lib/colpick.js</file>
-        <file>Back_G/lib/jquery-1.11.0.min.js</file>
-        <file>Back_G/lib/jquery.nicescroll.min.js</file>
-        <file>Back_G/lib/jquery.nouislider.min.js</file>
-        <file>Back_G/lib/modernizr-2.7.2.js</file>
-        <file>Back_G/index.html</file>
-        <file>Back_G/LICENSE</file>
-        <file>Back_G/README.md</file>
-        <file>Back_G/waterpipe.js</file>
         <file>Btn_More_Detail/dist/index.html</file>
         <file>Btn_More_Detail/dist/script.js</file>
         <file>Btn_More_Detail/dist/style.css</file>
@@ -53,13 +8,12 @@
         <file>Btn_More_Detail/src/style.sass</file>
         <file>Btn_More_Detail/LICENSE.txt</file>
         <file>Btn_More_Detail/README.md</file>
-        <file>Search_Box_3/dist/index.html</file>
-        <file>Search_Box_3/dist/script.js</file>
-        <file>Search_Box_3/dist/style.css</file>
-        <file>Search_Box_3/src/index.html</file>
-        <file>Search_Box_3/src/script.js</file>
-        <file>Search_Box_3/src/style.scss</file>
-        <file>Search_Box_3/LICENSE.txt</file>
-        <file>Search_Box_3/README.md</file>
+        <file>Btn_More_Detail.qml</file>
+        <file>Progress_Bar/dist/index.html</file>
+        <file>Progress_Bar/dist/style.css</file>
+        <file>Progress_Bar/src/index.html</file>
+        <file>Progress_Bar/src/style.css</file>
+        <file>Progress_Bar/LICENSE.txt</file>
+        <file>Progress_Bar/README.md</file>
     </qresource>
 </RCC>
