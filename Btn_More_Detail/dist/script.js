@@ -38,7 +38,7 @@ $("button").on("click touch", function () {
     $(this)
         $(this).find(".icn").hasClass("minus") == true
             ? abbas = "extra_detail"
-            : abbas = "none" ,backend.changeText(abbas, function(callback) { result = callback;})
+            : abbas = "less_detail" ,backend.changeText(abbas, function(callback) { result = callback;})
 
 
           ;

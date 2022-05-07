@@ -15,5 +15,29 @@
         <file>Progress_Bar/src/style.css</file>
         <file>Progress_Bar/LICENSE.txt</file>
         <file>Progress_Bar/README.md</file>
+        <file>Combo_Box/dist/index.html</file>
+        <file>Combo_Box/dist/script.js</file>
+        <file>Combo_Box/dist/style.css</file>
+        <file>Combo_Box/src/index.html</file>
+        <file>Combo_Box/src/script.js</file>
+        <file>Combo_Box/src/style.scss</file>
+        <file>Combo_Box/LICENSE.txt</file>
+        <file>Combo_Box/README.md</file>
+        <file>Tab_Bar/dist/index.html</file>
+        <file>Tab_Bar/dist/script.js</file>
+        <file>Tab_Bar/dist/style.css</file>
+        <file>Tab_Bar/src/index.html</file>
+        <file>Tab_Bar/src/script.js</file>
+        <file>Tab_Bar/src/style.css</file>
+        <file>Tab_Bar/LICENSE.txt</file>
+        <file>Tab_Bar/README.md</file>
+        <file>Image_Slider/dist/index.html</file>
+        <file>Image_Slider/dist/script.js</file>
+        <file>Image_Slider/dist/style.css</file>
+        <file>Image_Slider/src/index.html</file>
+        <file>Image_Slider/src/script.js</file>
+        <file>Image_Slider/src/style.scss</file>
+        <file>Image_Slider/LICENSE.txt</file>
+        <file>Image_Slider/README.md</file>
     </qresource>
 </RCC>

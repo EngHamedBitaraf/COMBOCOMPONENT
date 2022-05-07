@@ -6,8 +6,8 @@ import QtWebEngine 1.1
 
 Item {
     visible: true
-    width: 640
-    height: 480
+    width: 800
+    height: 600
     QtObject{
         id: someObject
 
@@ -25,9 +25,21 @@ Item {
             function changeText(newText) {
                 txt.text = newText;
 
+}
+            function change_Text_combo(new_combo_Text) {
+                combo_txt.text = new_combo_Text;
+
 
             }
+
+            function change_Text_tab(new_tab_Text) {
+                tab_bar_txt.text = new_tab_Text;
+
+
+            }
+
     }
+
     Rectangle {
        id : btn_detail
        width: 200
@@ -106,6 +118,96 @@ Item {
 
 
    }
+
+
+
+    Rectangle {
+       id : combo_box
+       width: 230
+       height: 270
+
+
+       x:500
+       y:10
+
+       WebEngineView {
+       anchors.fill: parent
+       url: "qrc:/Combo_Box/dist/index.html"
+       webChannel: channel
+                 }
+
+
+   }
+
+    Rectangle{
+         width: 150
+         height: 30
+         x:540
+         y:300
+         border.width: 1
+         border.color: "blue"
+         radius: 10
+     Text {
+         id: combo_txt
+         anchors.centerIn: parent
+         text: "none"
+ }
+ }
+
+
+
+    Rectangle {
+       id : tab_bar
+       width: 245
+       height: 80
+
+
+       x:20
+       y:200
+
+       WebEngineView {
+       anchors.fill: parent
+       url: "qrc:/Tab_Bar/dist/index.html"
+       webChannel: channel
+                 }
+
+
+   }
+
+    Rectangle{
+         width: 150
+         height: 30
+         x:65
+         y:300
+         border.width: 1
+         border.color: "blue"
+         radius: 10
+     Text {
+         id: tab_bar_txt
+         anchors.centerIn: parent
+         text: "Browse"
+ }
+ }
+
+
+    Rectangle {
+       id : img_slider
+       width: 500
+       height: 180
+
+
+       x:145
+       y:380
+
+       WebEngineView {
+       anchors.fill: parent
+       url: "qrc:/Image_Slider/dist/index.html"
+       webChannel: channel
+                 }
+
+
+   }
+
 
    }
 
