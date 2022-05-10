@@ -214,94 +214,10 @@ html {
     }
 }
 
-// switch
 
-.switch {
-    height: 20px;
-    display: block;
-    position: relative;
-    cursor: pointer;
-    input {
-        display: none;
-        & + span {
-            padding-left: 38px;
-            min-height: 20px;
-            line-height: 20px;
-            display: block;
-            color: #3F4656;
-            position: relative;
-            white-space: nowrap;
-            &:not(:empty) {
-                padding-left: 38px + 8;
-            }
-            &:before,
-            &:after {
-                content: '';
-                display: block;
-                position: absolute;
-                border-radius: 10px;
-            }
-            &:before {
-                top: 0;
-                left: 0;
-                width: 38px;
-                height: 20px;
-                border: 1px solid #2F3545;
-                transition: all .3s ease;
-            }
-            &:after {
-                width: 14px;
-                height: 14px;
-                background: #2F3545;
-                top: 3px;
-                left: 3px;
-                transition: all .45s ease;
-            }
-            & + svg {
-                display: none;
-            }
-        }
-        &:checked {
-            & + span {
-                &:before {
-                    background: #5628EE;
-                    border-color: #5628EE;
-                }
-                &:after {
-                    background: #fff;
-                    transform: translate(18px, 0);
-                }
-            }
-        }
-    }
-    &:hover {
-        input {
-            &:not(:checked) {
-                & + span {
-                    &:before {
-                        border-color: #23C4F8;
-                    }
-                }
-            }
-        }
-    }
-}
 
 // Center & dribbble
-body {
-    --bg: #171C28;
-    min-height: 100vh;
-    font-family: 'Mukta Malar', Arial;
-    line-height: 22px;
-    font-size: 16px;
-    color: #ADAFB6;
-    display: flex;
-    justify-content: center;
-    transition: background .3s ease;
-    background: var(--bg);
-    &.light {
-        --bg: #F5F9FF;
-    }
+
     .switch {
         position: absolute;
         bottom: 24px;

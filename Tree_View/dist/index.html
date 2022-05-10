@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+<script type="text/javascript" src="qrc:///qtwebchannel/qwebchannel.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Treeview DropDown</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="main">
+  <div class="ddl_holder">
+    <input type="text" class="txt_basic"></input>
+    <input type="button" class="btn" value="tree_view">
+    <ul class="dropdown">
+      <li>
+        <span class="litext">first option</span>
+      </li>
+      <li>
+        <span class="childtext">second option <i class="fa fa-sort-desc"></i></span>
+        <ul class="dropdownchild">
+          <li>
+            <span class="litext"> first sub </span>
+          </li>
+          <li>
+            <span class="litext"> second sub </span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span class="childtext">third option <i class="fa fa-sort-desc"></i></span>
+        <ul class="dropdownchild">
+          <li>
+            <span class="litext"> third sub </span>
+          </li>
+          <li>
+            <span class="litext"> fourth sub </span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span class="litext"> fourth option </span>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

@@ -39,5 +39,32 @@
         <file>Image_Slider/src/style.scss</file>
         <file>Image_Slider/LICENSE.txt</file>
         <file>Image_Slider/README.md</file>
+        <file>Image_slider.qml</file>
+        <file>Tab_Bar.qml</file>
+        <file>Combo_Box.qml</file>
+        <file>ProgresBar.qml</file>
+        <file>Button_detail.qml</file>
+        <file>Tree_View/dist/index.html</file>
+        <file>Tree_View/dist/script.js</file>
+        <file>Tree_View/dist/style.css</file>
+        <file>Tree_View/src/index.html</file>
+        <file>Tree_View/src/script.js</file>
+        <file>Tree_View/src/style.css</file>
+        <file>Tree_View/LICENSE.txt</file>
+        <file>Tree_View/README.md</file>
+        <file>Tree_View.qml</file>
+        <file>images/leftanglearrow.png</file>
+        <file>images/rightanglearrow.png</file>
+        <file>PersianCalendar.qml</file>
+        <file>PersianCalendarStyle.qml</file>
+        <file>search_box/dist/index.html</file>
+        <file>search_box/dist/script.js</file>
+        <file>search_box/dist/style.css</file>
+        <file>search_box/src/index.html</file>
+        <file>search_box/src/script.js</file>
+        <file>search_box/src/style.css</file>
+        <file>search_box/LICENSE.txt</file>
+        <file>search_box/README.md</file>
+        <file>Search_Box.qml</file>
     </qresource>
 </RCC>

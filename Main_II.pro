@@ -21,13 +21,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    sec.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    sec.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    sec.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -38,3 +41,4 @@ DISTFILES +=
 
 RESOURCES += \
     qml.qrc
+include(deployment.pri)

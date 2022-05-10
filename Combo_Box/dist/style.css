@@ -16,14 +16,14 @@
   position: relative;
 }
 .dropdown.light {
-  --text: #CDD9ED;
+  --text: #0a0a0a;
   --border: #CDD9ED;
   --borderActive: #23C4F8;
-  --background: #fff;
+  --background: #de6262 ;
   --arrow: #99A3BA;
   --arrowActive: #6C7486;
-  --listText: #99A3BA;
-  --listBackground: #fff;
+  --listText: #0a0a0a;
+  --listBackground: #de6262 ;
   --listActive: #F5F9FF;
   --listTextActive: #6C7486;
   --listBorder: #E4ECFA;
@@ -115,7 +115,7 @@
   right: 17px;
   top: 50%;
   opacity: 0;
-  background: var(--listText);
+  background: #f82323;
   transition: all 0.2s ease;
 }
 .dropdown ul li.active a:before {
@@ -220,35 +220,38 @@ html {
 }
 
 .switch {
+
   height: 20px;
   display: block;
-  position: relative;
+  position: absolute;
   cursor: pointer;
 }
 .switch input {
   display: none;
+
 }
 .switch input + span {
-  padding-left: 38px;
+  top: 80px;
+  left: 80px;
   min-height: 20px;
   line-height: 20px;
   display: block;
   color: #3F4656;
-  position: relative;
+  position: absolute;
   white-space: nowrap;
 }
 .switch input + span:not(:empty) {
-  padding-left: 46px;
+  padding-left: 0px;
 }
 .switch input + span:before, .switch input + span:after {
+
   content: "";
   display: block;
   position: absolute;
   border-radius: 10px;
 }
 .switch input + span:before {
-  top: 0;
-  left: 0;
+
   width: 38px;
   height: 20px;
   border: 1px solid #2F3545;
@@ -277,27 +280,7 @@ html {
   border-color: #23C4F8;
 }
 
-body {
-  --bg: #171C28;
-  min-height: 100vh;
-  font-family: "Mukta Malar", Arial;
-  line-height: 22px;
-  font-size: 16px;
-  color: #ADAFB6;
-  display: flex;
-  justify-content: center;
-  transition: background 0.3s ease;
-  background: var(--bg);
-}
-body.light {
-  --bg: #F5F9FF;
-}
-body .switch {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
+
 body .dropdown {
   margin-top: 10px;
 }
