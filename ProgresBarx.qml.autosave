@@ -4,16 +4,16 @@ import QtWebEngine 1.1
 
 
 Item {
-    property string myurl
+    
+   
    visible: false
    id : progress_bar
    width: 200
    height: 70
 
    WebEngineView {
-       id:wb
        anchors.fill: parent
-       url: myurl
+       url: ""
        webChannel: channel
       }
 

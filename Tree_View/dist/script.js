@@ -12,7 +12,7 @@ $(document).ready(function() {
   $(".dropdown").hide();
   $(".dropdownchild").hide();
   $(".btn").on("click", function() {
-    $(".dropdown").slideToggle("fast");
+    $(".dropdown").slideToggle("slow");
   });
   
   $(".childtext").on("click", function() {

@@ -23,7 +23,7 @@ $('select.dropdown').each(function() {
     list.insertAfter($(this));
 
     if($(this).find('option:selected').length) {
-        label.text($(this).find('option:selected').text());
+        label.text("Please choose");
         list.find('li:contains(' + $(this).find('option:selected').text() + ')').addClass('active');
         $(this).parent().addClass('filled');
     }
@@ -93,5 +93,8 @@ $(document).on('click touch', function(e) {
 
 // light
 $('.switch input').on('change', function(e) {
+    backend.change_color_switch("#de6262", function(callback) {
+        result = callback;
+    });
     $('.dropdown, body').toggleClass('light', $(this).is(':checked'));
 });

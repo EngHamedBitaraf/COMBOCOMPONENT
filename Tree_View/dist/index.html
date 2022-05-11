@@ -3,7 +3,7 @@
 <script type="text/javascript" src="qrc:///qtwebchannel/qwebchannel.js"></script>
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Treeview DropDown</title>
+
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
 
 </head>
@@ -15,8 +15,16 @@
     <input type="button" class="btn" value="tree_view">
     <ul class="dropdown">
       <li>
-        <span class="litext">first option</span>
-      </li>
+      <span class="childtext">first option <i class="fa fa-sort-desc"></i></span>
+      <ul class="dropdownchild">
+        <li>
+          <span class="litext"> 1th sub </span>
+        </li>
+        <li>
+          <span class="litext"> 2th sub </span>
+        </li>
+      </ul>
+    </li>
       <li>
         <span class="childtext">second option <i class="fa fa-sort-desc"></i></span>
         <ul class="dropdownchild">
@@ -42,6 +50,18 @@
       <li>
         <span class="litext"> fourth option </span>
       </li>
+
+<span class="childtext"> fifth option <i class="fa fa-sort-desc"></i></span>
+<ul class="dropdownchild">
+  <li>
+    <span class="litext"> 1th of 5 </span>
+  </li>
+  <li>
+    <span class="litext"> 2th of 5 </span>
+  </li>
+</ul>
+</li>
+
     </ul>
   </div>
 </div>

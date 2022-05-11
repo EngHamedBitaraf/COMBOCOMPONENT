@@ -4,7 +4,15 @@ import QtQuick.Controls 1.4
 import QtWebChannel 1.0
 import QtWebEngine 1.1
 import QtQuick.Layouts 1.12
+import QtQuick.Controls.Styles 1.4
 Item {
+
+    function abbas (){
+      if  (txtfld.time>=1000 && txtfld.time<=20000){
+      return true}
+      else{
+      return false}
+    }
     visible: true
     width: 1280
     height: 720
@@ -16,7 +24,9 @@ Item {
            property int send_Time: changiz()
 
             function changiz(){
-               return txtfld.time
+                if (abbas()===true){
+                   return txtfld.time }
+
             }
 
             function changeText(newText) {
@@ -38,6 +48,15 @@ Item {
                 tree_v_txt.text = new_tree_Text;
 
 
+           }
+
+           function change_color_switch(color){
+               if (combo_rec.color=="#de6262"){
+                   combo_rec.color="white"
+                 }
+               else{
+               combo_rec.color=color
+                }
            }
 
 
@@ -68,7 +87,7 @@ Item {
        Layout.column: 0
        Layout.preferredHeight: 30
        Layout.preferredWidth: 130
-       Layout.leftMargin: 35
+       Layout.leftMargin: 30
        Layout.bottomMargin: 225
 
 
@@ -102,7 +121,31 @@ Item {
        property int time:text*1
 
     }
+
+
+    Button{
+    id:set_time_btn
+    Layout.row: 1
+    Layout.column: 2
+    Layout.preferredWidth: 70
+    Layout.preferredHeight: 25
+    Layout.leftMargin: 210
+    Layout.topMargin: -140
+    //color: "light blue"
+    //border.width: 2
+    //border.color: "black"
+    text: "Set"
+    onClicked: {
+        someObject.changiz();
+        pg.visible =true
+        pg.myurl = "qrc:/Progress_Bar/dist/index.html"
+    }
+
+
+}
+
     ProgresBar{
+        id:pg
         Layout.leftMargin: 150
         Layout.topMargin: -400
         Layout.row: 1
@@ -117,14 +160,15 @@ Item {
         Layout.column: 2
     }
     Rectangle{
+        id:combo_rec
         Layout.row: 2
         Layout.column: 2
-        Layout.leftMargin: -120
+        Layout.leftMargin: -130
         Layout.topMargin: -280
          width: 150
          height: 30
          border.width: 1
-         border.color: "blue"
+         border.color: "black"
          radius: 10
      Text {
          id: combo_txt
@@ -136,7 +180,7 @@ Item {
 
 
     Tab_Bar{
-        Layout.leftMargin: -30
+        Layout.rightMargin: -300
         Layout.topMargin: -360
         id: tab_Bar
         Layout.row: 1
@@ -144,7 +188,7 @@ Item {
     }
 
         Rectangle{
-            Layout.leftMargin: 18
+            Layout.leftMargin: 70
             Layout.topMargin: -450
             Layout.row: 2
             Layout.column: 3
@@ -169,7 +213,7 @@ Item {
     }
 
     Rectangle{
-        Layout.leftMargin: 60
+        Layout.leftMargin: 75
         Layout.bottomMargin: -140
         Layout.row: 3
         Layout.column: 3

@@ -66,5 +66,11 @@
         <file>search_box/LICENSE.txt</file>
         <file>search_box/README.md</file>
         <file>Search_Box.qml</file>
+        <file>Image_Slider/dist/images/960x0.jpg</file>
+        <file>Image_Slider/dist/images/abstract-eye-futuristic-technology-background-vector.jpg</file>
+        <file>Image_Slider/dist/images/futuristic-technology-background--digital-hand.jpg</file>
+        <file>Image_Slider/dist/images/high-tech-technology-geometric-vector-28452768.jpg</file>
+        <file>Image_Slider/dist/images/tech-900x506.jpeg</file>
+        <file>Image_Slider/dist/images/tech-planet.jpg</file>
     </qresource>
 </RCC>

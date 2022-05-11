@@ -2,24 +2,19 @@
   box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #f3f5fc;
-}
+
+
 
 .items {
-  margin-bottom: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
   display: flex;
   background: white;
   border-radius: 24px;
   padding: 10px 10px;
   box-shadow: 0 12px 24px #dbe0f0;
-  position: top;
+  position: center;
   transform: scale(0.9);
 }
 
@@ -30,6 +25,7 @@ body {
   justify-content: center;
   padding: 0 10px;
 }
+
 
 .item-img {
   width: 40px;

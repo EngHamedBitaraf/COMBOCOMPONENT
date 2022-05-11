@@ -22,9 +22,8 @@ $("button").on("touchend mouseup", function () {
 $("button").on("click touch", function () {
     
         var abbas = ""
-	backend.changeText(abbas, function(callback) {
-            result = callback;
-	   });
+
+
 	$(this).find(".icn").toggleClass("minus");
 	$(this)
 		.find(".txt")

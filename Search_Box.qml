@@ -33,6 +33,6 @@ Item {
    Text {
        anchors.centerIn: parent
        id: name
-       text: qsTr("dffhhhg")
+
    }
 }

@@ -1,6 +1,6 @@
 .dropdown {
   --max-scroll: 8;
-  --text: #3F4656;
+  --text: #fff;
   --border: #2F3545;
   --borderActive: #23C4F8;
   --background: #151924;
@@ -11,23 +11,23 @@
   --listActive: #E4ECFA;
   --listTextActive: #6C7486;
   --listBorder: none;
-  --textFilled: #99A3BA;
+  --textFilled: #fff;
   width: 220px;
   position: relative;
 }
 .dropdown.light {
-  --text: #0a0a0a;
+  --text: #272a2b;
   --border: #CDD9ED;
   --borderActive: #23C4F8;
   --background: #de6262 ;
   --arrow: #99A3BA;
   --arrowActive: #6C7486;
-  --listText: #0a0a0a;
+  --listText: #272a2b;
   --listBackground: #de6262 ;
   --listActive: #F5F9FF;
-  --listTextActive: #6C7486;
+  --listTextActive: #272a2b;
   --listBorder: #E4ECFA;
-  --textFilled: #6C7486;
+  --textFilled: #272a2b;
 }
 .dropdown select {
   display: none;
@@ -269,8 +269,8 @@ html {
   display: none;
 }
 .switch input:checked + span:before {
-  background: #5628EE;
-  border-color: #5628EE;
+  background: #de6262;
+  border-color: #de6262;
 }
 .switch input:checked + span:after {
   background: #fff;

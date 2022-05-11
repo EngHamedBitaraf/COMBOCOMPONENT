@@ -3,8 +3,8 @@ import QtWebChannel 1.0
 import QtWebEngine 1.1
 Item {
    id : tab_bar
-   width: 245
-   height: 80
+   width: 300
+   height: 110
 
    WebEngineView {
    anchors.fill: parent
