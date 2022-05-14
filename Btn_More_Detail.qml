@@ -7,12 +7,6 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls.Styles 1.4
 Item {
 
-    function abbas (){
-      if  (txtfld.time>=1000 && txtfld.time<=20000){
-      return true}
-      else{
-      return false}
-    }
     visible: true
     width: 1280
     height: 720
@@ -21,13 +15,10 @@ Item {
         id: someObject
             // ID, under which this object will be known at WebEngineView side
             WebChannel.id: "backend"
-           property int send_Time: changiz()
 
-            function changiz(){
-                if (abbas()===true){
-                   return txtfld.time }
 
-            }
+            property int send_Time
+
 
             function changeText(newText) {
                 txt.text = newText;
@@ -111,20 +102,21 @@ Item {
         Layout.preferredHeight: 30
         Layout.leftMargin: 150
         Layout.topMargin: -240
-       id : txtfld
+        id : txtfld
 
-       horizontalAlignment: TextInput.AlignHCenter
-       validator: IntValidator {bottom: 1000; top: 200000;}
-       width: 200
-       height: 30
-       placeholderText: "زمان اجرا را وارد کنید: m/s"
-       property int time:text*1
+        horizontalAlignment: TextInput.AlignHCenter
+        validator: IntValidator {bottom: 1000; top: 200000;}
+        width: 200
+        height: 30
+        placeholderText: "زمان اجرا را وارد کنید: m/s"
+        property int time:text*1
 
     }
 
 
     Button{
     id:set_time_btn
+    property bool clickeddd: false
     Layout.row: 1
     Layout.column: 2
     Layout.preferredWidth: 70
@@ -136,9 +128,22 @@ Item {
     //border.color: "black"
     text: "Set"
     onClicked: {
-        someObject.changiz();
-        pg.visible =true
-        pg.myurl = "qrc:/Progress_Bar/dist/index.html"
+
+        function abbas (){
+          if  (txtfld.time>=1000 && txtfld.time<=20000){
+                someObject.send_Time=txtfld.time
+                pg.visible =true
+                pg.enabled =true
+                pg.myurl = "qrc:/Progress_Bar/dist/index.html"
+          }
+
+        }
+        abbas()
+
+
+
+
+
     }
 
 

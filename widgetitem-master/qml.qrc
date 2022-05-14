@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Btn_More_Detail/dist/index.html</file>
+        <file>Btn_More_Detail/dist/script.js</file>
+        <file>Btn_More_Detail/dist/style.css</file>
+        <file>Btn_More_Detail/src/index.pug</file>
+        <file>Btn_More_Detail/src/script.js</file>
+        <file>Btn_More_Detail/src/style.sass</file>
+        <file>Btn_More_Detail/LICENSE.txt</file>
+        <file>Btn_More_Detail/README.md</file>
+    </qresource>
+</RCC>

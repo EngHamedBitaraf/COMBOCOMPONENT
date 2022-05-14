@@ -4,8 +4,9 @@ import QtWebEngine 1.1
 
 
 Item {
-    property string myurl
+   property string myurl
    visible: false
+   enabled: false
    id : progress_bar
    width: 200
    height: 70
