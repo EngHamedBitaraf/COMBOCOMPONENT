@@ -13,7 +13,7 @@ Item {
 
     QtObject{
         id: someObject
-            // ID, under which this object will be known at WebEngineView side
+
             WebChannel.id: "backend"
 
 

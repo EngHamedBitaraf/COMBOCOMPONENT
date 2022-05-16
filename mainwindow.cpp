@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    qml =new QQuickView(QUrl(QLatin1String("qrc:/Btn_More_Detail.qml")));
+    qml =new QQuickView(QUrl(QLatin1String("qrc:/Main.qml")));
     widget = QWidget::createWindowContainer(qml);
     ui->verticalLayout->addWidget(widget);
 }
