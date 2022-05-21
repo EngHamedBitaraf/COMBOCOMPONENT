@@ -1,145 +1,123 @@
-import QtQuick 2.12
-import QtGraphicalEffects 1.12
-import QtQuick.Window 2.12
+import QtQuick 2.0
 import QtQuick.Controls 2.12
-import QtQuick.Layouts 1.12
-import QtQuick.Controls.Styles 1.3
-import QtQuick.Controls.Private 1.0
 
 Item {
-    Rectangle {
-        width:400;
-        height: 400;
+    Rectangle{
+        anchors.centerIn: parent
 
-        Rectangle {
-                id:comboBox
-                property variant items: ["Item 1", "Item 2", "Item 3" , "Item 4", "Item 5", "Item 6", "Item 7"]
-                property alias selectedItem: chosenItemText.text;
-                property alias selectedIndex: listView.currentIndex;
-                signal comboClicked;
-                width: 200;
-                height: 40;
-                z: 100;
-                smooth:true;
+        width: 200
+        height: 50
+        //radius: 15
+        //anchors.verticalCenter: parent.verticalCenter
+        color: "transparent"
+        border.width: 1.2
+        border.color: "black"
 
-                Rectangle {
-                    id:chosenItem
-                    radius:4;
-                    width:parent.width;
-                    height:comboBox.height;
-                    gradient: Gradient {
-                           GradientStop { position: 0.0; color: "#00d4ff" }
-                           GradientStop { position: 0.33; color: "#5079b3" }
-                           GradientStop { position: 1.0; color: "#8b43a3" }
-                       }
-                    smooth:true;
-                    Text {
-                        anchors.top: parent.top;
-                        anchors.topMargin:7
-                        anchors.left: parent.left;
-                        anchors.leftMargin:5;
-                        id:chosenItemText
-                        //text:comboBox.items[0];
-                        text:"Please Choose"
-                        font.family: "Arial"
-                        font.pointSize: 14;
-                        smooth:true
-                        color: "white"
+        ComboBox{
+            //width: 200
+            //height: 50
+            id: styleSelector
+            anchors.fill: parent
+            onCurrentIndexChanged: {
+                console.log(currentText)
+            }
+            model: ["Section1", "Section2", "Section3", "Section4"]
+            delegate: ItemDelegate {
+                width: styleSelector.width
+                contentItem: Text {
+                    text: modelData
+                    color: "#FFFFFF"
+
+                    elide: Text.ElideRight
+                    verticalAlignment: Text.AlignVCenter
+                }
+                background: Rectangle {
+                    id:item
+                    width: 100
+                    color: "transparent"
+                    radius: 20
 
 
-                    }
+                }
+                highlighted: styleSelector.highlightedIndex === index
+            }
+            background: Rectangle {
+                anchors.fill: parent
+                gradient: Gradient {
+                       GradientStop { position: 0.35; color: "#4c6cb0" }
+                       GradientStop { position: 1.0; color: "#00d4ff" }
+                      }
+                border.color: "white"
+                border.width: 4
+                //radius: 30
+            }
 
-                    MouseArea {
-                        anchors.fill: parent;
-                        onClicked: {
-                            comboBox.state = comboBox.state==="dropDown"?"":"dropDown"
-                        }
-                    }
+            popup: Popup{
+
+
+                enter: Transition {
+                    NumberAnimation { property: "height"; from: 0.0; to: styleSelector.height * 6; easing.type: Easing.InOutCirc; duration: 1000 }
                 }
 
-                Rectangle {
-                    id:dropDown
-                    width:comboBox.width;
-                    height:0;
-                    clip:true
-                    radius:4
-                    anchors.top: chosenItem.bottom;
-                    anchors.margins: 2;
+                id:popup
+                y: styleSelector.height - 1
+                width: styleSelector.width
+                height: styleSelector.height * 6
+                padding: 1
+
+
+                Component {
+                     id: highlight
+                     Rectangle {
+                         width: 180; height: 40
+                          gradient: Gradient {
+                                    GradientStop { position: 0.0; color: "#00d4ff" }
+                                    GradientStop { position: 0.33; color: "#5079b3" }
+                                    GradientStop { position: 1.0; color: "#8b43a3" }
+                                } radius: 5
+//                         y: list.currentItem.y
+//                         Behavior on y {
+//                             SpringAnimation {
+//                                 spring: 3
+//                                 damping: 0.2
+//                             }
+//                         }
+                     }
+                 }
+
+
+                contentItem: ListView {
+                    id: listview
+                    implicitHeight: popup.height
+                    clip: true
+                    highlight: highlight
+                    model:styleSelector.delegateModel
+                    currentIndex: styleSelector.highlightedIndex
+                    interactive: true
+                    highlightMoveDuration: 0
+                    boundsBehavior: ListView.StopAtBounds
+
+
+                    ScrollBar.vertical:ScrollBar {}
+                }
+                background: Rectangle {
+                    //anchors.top: styleSelector.top
+                    anchors.topMargin: 10
+                    //radius: 20
                     gradient: Gradient {
                            GradientStop { position: 0.35; color: "#4c6cb0" }
                            GradientStop { position: 1.0; color: "#00d4ff" }
                           }
-                    ListView {
-                        id:listView
-                        height:500;
-                        model: comboBox.items
-                        currentIndex: 0
-                        delegate: Item{
-                            width:comboBox.width;
-                            height: comboBox.height;
-
-                            Text {
-                                text: modelData
-                                anchors.topMargin: 7
-                                anchors.top: parent.top;
-                                anchors.left: parent.left
-                                anchors.leftMargin: 5
-                                color: "white"
-
-
-
-                            }
-                            ToolSeparator {
-                                orientation: Qt.Horizontal
-                                width: parent.width
-                                anchors.top: parent.top
-                                anchors.topMargin: -7
-                            }
-
-                            MouseArea {
-                                anchors.fill: parent;
-                                onClicked: {
-                                    modelData.color="red"
-
-                                    comboBox.state = ""
-                                    var prevSelection = chosenItemText.text
-                                    chosenItemText.text = modelData
-                                    if(chosenItemText.text !== prevSelection){
-                                        comboBox.comboClicked();
-
-
-
-
-                                    }
-                                    listView.currentIndex = index;
-                                }
-                            }
-                        }
-                    }
+                    border.width: 4
+                    border.color:"white"
                 }
 
-                Component {
-                    id: highlight
-                    Rectangle {
-                        width:comboBox.width;
-                        height:comboBox.height;
-                        color: "red";
-                        radius: 4
-                    }
-                }
 
-                states: State {
-                    name: "dropDown";
-                    PropertyChanges { target: dropDown; height:40*comboBox.items.length }
-                }
-
-                transitions: Transition {
-                    NumberAnimation { target: dropDown; properties: "height"; easing.type: Easing.InOutCirc; duration: 1000 }
-                }
             }
-        }
 
+
+        }
+    }
 
 
 }
-

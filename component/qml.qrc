@@ -5,6 +5,6 @@
         <file>kindpng.png</file>
         <file>minus</file>
         <file>Combo_Box.qml</file>
-        <file>Combo_Box_2.qml</file>
+        <file>Tree_view.qml</file>
     </qresource>
 </RCC>
