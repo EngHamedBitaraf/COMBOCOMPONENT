@@ -6,5 +6,6 @@
         <file>minus</file>
         <file>Combo_Box.qml</file>
         <file>Combo_Box_2.qml</file>
+        <file>icons8-multiply-30.png</file>
     </qresource>
 </RCC>
