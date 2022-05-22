@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>kindpng.png</file>
+        <file>Button_1.qml</file>
+        <file>Combo_Box.qml</file>
+        <file>main.qml</file>
+        <file>minus</file>
+        <file>Tree_view.qml</file>
+    </qresource>
+</RCC>
