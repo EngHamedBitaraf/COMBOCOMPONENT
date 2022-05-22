@@ -37,5 +37,4 @@ HEADERS += \
     button_Events.h \
     button_ui.h
 
-FORMS += \
-    mainwindow.ui
+FORMS +=

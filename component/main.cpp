@@ -21,9 +21,6 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    //tree view model class
-    TreeViewModel mymodel;
-    engine.rootContext()->setContextProperty("mymodel", &mymodel);
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
@@ -36,6 +33,10 @@ int main(int argc, char *argv[])
     QQmlContext * rootContext = engine.rootContext();
     rootContext->setContextProperty("button_wid", &button_class);
 
+
+    //tree view model class
+    TreeViewModel mymodel;
+    rootContext->setContextProperty("mymodel", &mymodel);
 
 
 

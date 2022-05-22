@@ -49,7 +49,7 @@ Item {
         id:btn
         border.color: "#1aba1a"
         border.width: 2
-        color: btn_1_bckg_colr
+        color: button_ui.get_btn_1_bckg_colr()
 
         Image {
             id: btn_img
