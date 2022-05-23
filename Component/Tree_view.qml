@@ -12,18 +12,6 @@ import QtQml.Models 2.2
 Item {
     id:tree_view
 
-
-    Rectangle {
-        radius: 10
-        anchors.fill: parent
-        id: root
-        height: tree.height
-        width: tree.width
-        Transition {
-            NumberAnimation {target:root ; property: "height"; from: 0; to: tree.height; easing.type: Easing.InOutCirc; duration: 1000; running: true}
-        }
-
-
         TreeView{
             id:tree
 
@@ -48,7 +36,7 @@ Item {
             style: TreeViewStyle{
 //                branchDelegate:Rectangle {
 //                    width: 20; height: 20
-//                        color: "transparent"
+//                        color: "white"
 //                    }
                highlightedTextColor: "black"
                backgroundColor:"white"
@@ -80,6 +68,11 @@ Item {
                 NumberAnimation { properties: "y"; duration: 700; easing.type: Easing.InOutQuint }
             }
 
+            Transition {
+                id: treeTransitionAnimation_neg
+                NumberAnimation { properties: "y"; to:0; duration: 900; easing.type: Easing.OutInQuint }
+            }
+
             TableViewColumn{
 
 
@@ -100,15 +93,15 @@ Item {
             Component.onCompleted: {
                 if(this.__listView) {
                     this.__listView.add  = treeTransitionAnimation
-                    this.__listView.remove  = treeTransitionAnimation
+                    this.__listView.remove  = treeTransitionAnimation_neg
                     //doesn't actually work on remove. The child items in the tree just disappear...
                 }
                 else {
-                    console.log("Something bad happened. Darn.")
+                    console.log("Something bad happened")
                 }
             }
         }
 
-    }
+
 
 }

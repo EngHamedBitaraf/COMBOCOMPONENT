@@ -20,10 +20,13 @@ MainWindow::MainWindow(QWidget *parent)
     button_UI *button_ui=new button_UI;
 
     //set button ui
+//    button_ui->btn_1_wth(300);
+//    button_ui->btn_1_hght(60);
 //    button_ui->btn_1_bckg_colr("green");
 //    button_ui->btn_1_border_col("red");
 //    button_ui->btn_1_border_wth(12);
-//    button_ui->btn_1_txt("gfsgsd");
+//    button_ui->btn_1_txt_press("gfsgsd");
+//    button_ui->btn_1_txt_release("24352");
 //    button_ui->btn_1_txt_col("blue");
 //    button_ui->btn_1_txt_siz(7);
 //    button_ui->btn_1_shadow_rad(5);

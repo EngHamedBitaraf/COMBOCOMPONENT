@@ -14,7 +14,8 @@ Item {
     property int btn_1_border_width : button_ui.get_btn_1_border_wth()
     property string btn_1_border_colr : button_ui.get_btn_1_border_col()
 
-    property string btn_1_txt : button_ui.get_btn_1_txt()
+    property string btn_1_txt_prs : button_ui.get_btn_1_txt_press()
+    property string btn_1_txt_rel : button_ui.get_btn_1_txt_release()
     property string btn_1_txt_colr : button_ui.get_btn_1_txt_col()
     property int btn_1_txt_size : button_ui.get_btn_1_txt_siz()
 
@@ -68,7 +69,7 @@ Item {
         Text {
             id: btn_txt
             color: btn_1_txt_colr
-            text: btn_1_txt
+            text: btn_1_txt_prs
             font.pixelSize: btn_1_txt_size
             anchors.centerIn: parent
 
@@ -125,7 +126,7 @@ Item {
 
 
             if(btn_img.source=="qrc:/kindpng.png"){
-                btn_txt.text="Less Detail"
+                btn_txt.text=btn_1_txt_rel
                 ani_mov_p.start()
                 ani_rot.start()
                 btn_img.source="qrc:/minus"
@@ -136,7 +137,7 @@ Item {
             }
 
             else if(btn_img.source=="qrc:/minus"){
-                btn_txt.text="More Detail"
+                btn_txt.text=btn_1_txt_prs
                 btn_img.source="qrc:/kindpng.png"
                 ani_rot.start()
                 ani_mov_n.start()
@@ -201,6 +202,8 @@ Item {
             to:15
             duration: 150
         }
+
+
 
 
     }

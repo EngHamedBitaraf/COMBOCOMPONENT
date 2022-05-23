@@ -11,18 +11,19 @@ Item {
     width: 1280
     height: 720
 
-    function size_button(Width,Height){
-       btn_1.width = Width
-       btn_1.height = Height
+//    function size_button(Width,Height){
+//       btn_1.width = Width
+//       btn_1.height = Height
 
-    }
+//    }
 
-   function size_combo(Width,Height){
-       combo_box.width = Width
-       combo_box.height = Height
-   }
+//   function size_combo(Width,Height){
+//       combo_box.width = Width
+//       combo_box.height = Height
+//   }
 
-
+    property int btn_1_width
+    property int btn_1_height
     Button_1{
         id:btn_1
         width: 200
@@ -38,9 +39,9 @@ Item {
     Combo_Box{
         id:combo_box
         anchors.left: btn_1.right
-        anchors.leftMargin: 150
+        anchors.leftMargin: 50
         anchors.top: parent.top
-        anchors.topMargin: 40
+        anchors.topMargin: 15
 
     }
 
@@ -48,7 +49,7 @@ Item {
             width: 200
             height: 300
             anchors.left: combo_box.right
-            anchors.leftMargin: 150
+            anchors.leftMargin: 250
             anchors.top: parent.top
             anchors.topMargin: 60
 }

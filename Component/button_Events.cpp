@@ -10,9 +10,9 @@ button::button(QObject *parent) : QObject(parent)
 
 void button::onClick_More()
 {
-    button_UI *button_ui = new button_UI;
+
     qDebug() <<"qml button_More clicked";
-    button_ui->btn_1_bckg_colr("red");
+
 
 }
 
@@ -26,6 +26,7 @@ void button::onClick_Less()
 void button::onHover_In()
 {
      qDebug() <<"Hover In btn_1";
+     button_UI *button_ui = new button_UI;
 }
 
 void button::onHover_Out()
