@@ -7,5 +7,8 @@
         <file>Tree_view.qml</file>
         <file>Combo_Box.qml</file>
         <file>multiply</file>
+        <file>tree_view_icons/icons8-folder-64.png</file>
+        <file>tree_view_icons/icons8-folder-64(1).png</file>
+        <file>gradient-colors-background-vector-22266648.jpg</file>
     </qresource>
 </RCC>

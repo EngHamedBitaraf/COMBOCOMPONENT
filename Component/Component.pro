@@ -25,6 +25,7 @@ SOURCES += \
     TreeViewModel.cpp \
     button_Events.cpp \
     button_ui.cpp \
+    combo_box_events.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -32,6 +33,7 @@ HEADERS += \
     TreeViewModel.h \
     button_Events.h \
     button_ui.h \
+    combo_box_events.h \
     mainwindow.h
 
 FORMS += \

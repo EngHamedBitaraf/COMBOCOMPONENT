@@ -11,78 +11,76 @@ import QtQml.Models 2.2
 
 Item {
     id:tree_view
+    TreeView{
+        id:tree
+        headerVisible: false
+        frameVisible: false
+        section.property: ""
+        antialiasing: true
+        highlightOnFocus: true
 
-        TreeView{
-            id:tree
+//            headerDelegate: {
 
-
-            headerDelegate: {
-
-                        enabled:false
-                    }
+//
+//                            }
 
             rowDelegate:Rectangle{
 
                 height:40
-
-
-
                 gradient: Gradient {
-                    GradientStop { position: 0.35; color: "#4c6cb0" }
-                    GradientStop { position: 1.0; color: "#00d4ff" }
-
+                    GradientStop { position: 0.2; color: "#003A6B" }
+                    GradientStop { position: 0.6; color: "#1B5886" }
+                    GradientStop { position: 1.0; color: "#5293BB" }
                 }
             }
             style: TreeViewStyle{
-//                branchDelegate:Rectangle {
-//                    width: 20; height: 20
-//                        color: "white"
-//                    }
+                branchDelegate:Rectangle {
+                    width: 25; height: 25
+                    anchors.left: parent.left
+                    anchors.leftMargin: 15
+                    color: "transparent"
+
+
+                    Image {
+                        id: icon
+                        source: "qrc:/tree_view_icons/icons8-folder-64(1).png"
+                        anchors.fill: parent
+                    }
+
+                    }
                highlightedTextColor: "black"
                backgroundColor:"white"
                textColor:"white"
-
 
             }
 
             model: mymodel
             anchors.fill: parent
-//            itemDelegate: Item {
+           itemDelegate: Item {
 
+                Text {
+                    anchors.verticalCenter: parent.verticalCenter
+                    color: "white"
+                    elide: styleData.elideMode
+                    text: styleData.value
+                    anchors.left: parent.left
+                    anchors.leftMargin: 20
 
-
-
-//                Text {
-//                    anchors.verticalCenter: parent.verticalCenter
-//                    color: "white"
-//                    elide: styleData.elideMode
-//                    text: styleData.value
-//                }
-//            }
-
-
-
+                }
+}
 
             Transition {
                 id: treeTransitionAnimation
-                NumberAnimation { properties: "y"; duration: 700; easing.type: Easing.InOutQuint }
+                NumberAnimation { properties: "y"; duration: 700; easing.type: Easing.InOutCirc }
             }
 
             Transition {
                 id: treeTransitionAnimation_neg
-                NumberAnimation { properties: "y"; to:0; duration: 900; easing.type: Easing.OutInQuint }
+                NumberAnimation { properties: "y"; to:0; duration: 900; easing.type: Easing.OutInCirc }
             }
 
             TableViewColumn{
-
-
                 resizable: false
-
-                //            delegate: {
-
-
-                //            }
-
                 role: "display"
                 title: "elements"
                 width: 100
@@ -94,14 +92,31 @@ Item {
                 if(this.__listView) {
                     this.__listView.add  = treeTransitionAnimation
                     this.__listView.remove  = treeTransitionAnimation_neg
-                    //doesn't actually work on remove. The child items in the tree just disappear...
                 }
                 else {
                     console.log("Something bad happened")
                 }
             }
+
+
+            onClicked: {
+                //console.log("curExpandedRowIndex is: ",__currentRow)
+                console.log("curIndexParentRow is: ",currentIndex.parent.row, "CurIndexChildrow: ",currentIndex.row)
+            }
+
+            onCurrentIndexChanged: {
+
+            }
+
+
         }
 
 
 
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/

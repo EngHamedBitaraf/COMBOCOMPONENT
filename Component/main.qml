@@ -8,8 +8,12 @@ import QtQuick.Controls.Styles 1.4
 Item {
     id: main
     visible: true
-    width: 1280
-    height: 720
+    anchors.fill: parent
+    Image {
+        id: back
+        source: "qrc:/gradient-colors-background-vector-22266648.jpg"
+        anchors.fill: parent
+    }
 
 //    function size_button(Width,Height){
 //       btn_1.width = Width
@@ -47,7 +51,7 @@ Item {
 
     Tree_view{
             width: 200
-            height: 300
+            height: 280
             anchors.left: combo_box.right
             anchors.leftMargin: 250
             anchors.top: parent.top

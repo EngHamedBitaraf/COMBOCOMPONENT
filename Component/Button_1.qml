@@ -98,6 +98,7 @@ Item {
         onEntered:{
             ani_col_gre.start()
             btn_txt.color="#fff"
+            shadow.color="#fff"
 
             button_wid.onHover_In()
 
@@ -106,6 +107,7 @@ Item {
         onExited: {
             ani_col_whi.start()
             btn_txt.color="#1aba1a"
+            shadow.color="#1aba1a"
 
 
 

@@ -1,17 +1,31 @@
-import QtQuick 2.0
+import QtQuick 2.12
+import QtGraphicalEffects 1.12
+import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
+import QtQuick.Layouts 1.12
+import QtQuick.Controls.Styles 1.4
+import contrl_struct 1.0
 
 
 
 Item {
 
-
+    DropShadow {
+        id:shadow
+        anchors.fill: btn
+        horizontalOffset: 5
+        verticalOffset: 5
+        radius: btn_1_shadow_radius
+        spread: 0.1
+        samples: btn_1_shadow_sample
+        color: btn_1_shadow_color
+        source: btn
+    }
 
     property bool stateVisible: false
-
-
     ComboBox{
         background: Rectangle {
+            id:x
            gradient: Gradient {
                       GradientStop { position: 0.35; color: "#4c6cb0" }
                       GradientStop { position: 1.0; color: "#00d4ff" }
@@ -21,51 +35,51 @@ Item {
         displayText: "Please Choose:"
         width: 200
         height: 50
+
+
+
         onActivated: {
             if (displayText === currentText){
 
                 displayText = "Please Choose:"
             }else
                 displayText = styleSelector.currentText
+            console.log(currentIndex)
+
+            comboEvent.onActivated(currentText)
         }
         onHighlightedIndexChanged: {
 
-
-
-
                 if (textAt(highlightedIndex) === displayText){
                     stateVisible = true
-
-
-
-
 
                 }
                 else{
                    stateVisible = false
 
                 }
-
-
-
-
+                comboEvent.onHighlightedIndexChanged()
+        }
+        onCurrentIndexChanged: {
+                comboEvent.onCurrentIndexChanged()
+        }
+        onCurrentTextChanged: {
+                comboEvent.onCurrentTextChanged()
         }
 
 
-
-        model: ["Section1", "Section2", "Section3", "Section4"]
+        model: ["Section1", "Section2", "Section3", "Section4", "Section5", "Section6", "Section7", "Section8"]
         delegate: ItemDelegate {
             width: styleSelector.width
             contentItem: Text {
                 text: modelData
                 color: "#FFFFFF"
-
                 elide: Text.ElideRight
                 verticalAlignment: Text.AlignVCenter
             }
             background: Rectangle {
                 id:i
-                width: styleSelector.width -16
+                //width: styleSelector.width -16
                 color: "transparent"
                 radius: 20
 
@@ -80,9 +94,12 @@ Item {
             enter: Transition {
                 NumberAnimation { property: "height"; from: 0.0; to: styleSelector.height * 6; easing.type: Easing.InOutCirc; duration: 1000 }
             }
+            exit: Transition {
+                NumberAnimation { property: "height"; from: styleSelector.height * 6; to: 0.0; easing.type: Easing.OutInCirc; duration: 800 }
+            }
 
             id:popup
-            y: styleSelector.height - 1
+            y: styleSelector.height
             width: styleSelector.width
             height: styleSelector.height * 6
             padding: 1
@@ -91,6 +108,7 @@ Item {
             Component {
                 id: highlight
                 Rectangle{
+
 
                     Image {
                         id: image
@@ -144,18 +162,21 @@ Item {
                 highlightMoveDuration: 0
                 boundsBehavior: ListView.StopAtBounds
 
-
+                anchors.top: parent.top
+                anchors.topMargin: 7.5
                 ScrollBar.vertical:ScrollBar {}
             }
             background: Rectangle {
+                anchors.top: parent.top
+                anchors.topMargin: 7
                 id : reccombo
                 //radius: 20
                 gradient: Gradient {
                     GradientStop { position: 0.35; color: "#4c6cb0" }
                     GradientStop { position: 1.0; color: "#00d4ff" }
                 }
-                border.width: 4
-                border.color:"white"
+//                border.width: 4
+//                border.color:"white"
 
             }
 
@@ -169,7 +190,7 @@ Item {
 
 
 
-    }
+}
 
 
 /*##^##
