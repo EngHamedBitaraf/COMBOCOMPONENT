@@ -8,6 +8,7 @@
 #include <TreeViewModel.h>
 #include "QDebug"
 #include <combo_box_events.h>
+#include <tree_view_events.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -16,10 +17,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     button *button_event=new button;
     combo_box_Events *combo_event = new combo_box_Events;
+    tree_view_events *tree_event = new tree_view_events;
 
     qmlRegisterType<button_UI >("contrl_struct",1,0,"Button_UI");
 
     button_UI *button_ui=new button_UI;
+    button_event->set_but_ui(button_ui);
 
     //modify button ui
 //    button_ui->btn_1_wth(300);
@@ -50,8 +53,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     qml->engine()->rootContext()->setContextProperty("button_ui", button_ui);
 
-
     qml->engine()->rootContext()->setContextProperty("comboEvent",combo_event);
+
+    qml->engine()->rootContext()->setContextProperty("treeEvent",tree_event);
 
     widget = QWidget::createWindowContainer(qml);
     ui->verticalLayout->addWidget(widget);

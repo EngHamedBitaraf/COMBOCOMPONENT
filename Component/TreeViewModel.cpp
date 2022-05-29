@@ -20,6 +20,9 @@ TreeViewModel::TreeViewModel(QObject *parent)
     QStandardItem *value6 = new QStandardItem;
     QStandardItem *value7 = new QStandardItem;
 
+    QStandardItem *item0 = new QStandardItem;
+
+
     group1->setText("group 1");
     group2->setText("group 2");
     group3->setText("group 3");
@@ -32,12 +35,15 @@ TreeViewModel::TreeViewModel(QObject *parent)
     value6->setText("value 6");
     value7->setText("value 7");
 
+    item0->setText("item 0");
 
+    rootItem->appendRow(group1);
+    rootItem->appendRow(group2);
+    rootItem->appendRow(group3);
 
     group1->appendRow(value1);
     group1->appendRow(value2);
     group1->appendRow(value3);
-
 
     group2->appendRow(value4);
     group2->appendRow(value5);
@@ -45,8 +51,7 @@ TreeViewModel::TreeViewModel(QObject *parent)
     group3->appendRow(value6);
     group3->appendRow(value7);
 
-    rootItem->appendRow(group1);
-    rootItem->appendRow(group2);
-    rootItem->appendRow(group3);
+    value1->appendRow(item0);
+
 
 }

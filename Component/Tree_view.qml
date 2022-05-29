@@ -25,7 +25,6 @@ Item {
 //                            }
 
             rowDelegate:Rectangle{
-
                 height:40
                 gradient: Gradient {
                     GradientStop { position: 0.2; color: "#003A6B" }
@@ -56,7 +55,7 @@ Item {
 
             model: mymodel
             anchors.fill: parent
-           itemDelegate: Item {
+            itemDelegate: Item {
 
                 Text {
                     anchors.verticalCenter: parent.verticalCenter
@@ -86,7 +85,6 @@ Item {
                 width: 100
 
 
-
             }
             Component.onCompleted: {
                 if(this.__listView) {
@@ -101,22 +99,20 @@ Item {
 
             onClicked: {
                 //console.log("curExpandedRowIndex is: ",__currentRow)
-                console.log("curIndexParentRow is: ",currentIndex.parent.row, "CurIndexChildrow: ",currentIndex.row)
+                console.log("curIndexParentRow is: ",currentIndex.parent.row, "CurIndexChildrow: ",currentIndex.row,"CurRowindex: ",__currentRow)
+                treeEvent.onClicked()
             }
 
             onCurrentIndexChanged: {
-
+                treeEvent.onCurrentIndexChanged()
+            }
+            onRootIndexChanged: {
+                treeEvent.onRootIndexChanged()
             }
 
 
         }
 
-
-
 }
 
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}
-}
-##^##*/
+

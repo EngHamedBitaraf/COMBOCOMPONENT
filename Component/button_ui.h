@@ -8,17 +8,7 @@ class button_UI : public QObject
     Q_OBJECT
 public:
 
-//    QString c = "fu";
-//    struct ret_border{
-//        qint8 bord_wth;
-//        QString bord_clor;
-//    };
-    //ret_border b;
     explicit button_UI(QObject *parent = nullptr);
-
-
-
-
 
 private:
 

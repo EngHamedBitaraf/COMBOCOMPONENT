@@ -8,7 +8,6 @@ import contrl_struct 1.0
 
 Item {
 
-
     property string btn_1_bckg_colr : button_ui.get_btn_1_bckg_colr()
 
     property int btn_1_border_width : button_ui.get_btn_1_border_wth()
@@ -53,7 +52,6 @@ Item {
         color: btn_1_bckg_colr
 
 
-
         Image {
             id: btn_img
             width: 20
@@ -90,7 +88,6 @@ Item {
     }
 
 
-
     MouseArea{
         anchors.fill: parent
         hoverEnabled: true
@@ -99,8 +96,8 @@ Item {
             ani_col_gre.start()
             btn_txt.color="#fff"
             shadow.color="#fff"
-
             button_wid.onHover_In()
+            btn.color = button_ui.get_btn_1_bckg_colr()
 
 
         }
@@ -108,25 +105,11 @@ Item {
             ani_col_whi.start()
             btn_txt.color="#1aba1a"
             shadow.color="#1aba1a"
-
-
-
            button_wid.onHover_Out()
-
-
-
-
-
-
-
-
-
 
         }
 
         onClicked: {
-
-
             if(btn_img.source=="qrc:/kindpng.png"){
                 btn_txt.text=btn_1_txt_rel
                 ani_mov_p.start()
@@ -134,7 +117,6 @@ Item {
                 btn_img.source="qrc:/minus"
 
                 button_wid.onClick_More()
-
 
             }
 
@@ -144,10 +126,7 @@ Item {
                 ani_rot.start()
                 ani_mov_n.start()
 
-
                button_wid.onClick_Less()
-
-
 
             }
 
@@ -205,16 +184,12 @@ Item {
             duration: 150
         }
 
-
-
-
     }
 
 
     ParallelAnimation {
         id:ani_mov_n
         NumberAnimation {
-
             target: btn_1
             property: "anchors.leftMargin"
             from :15
@@ -225,15 +200,13 @@ Item {
         NumberAnimation {
             target: btn_1
             property: "anchors.topMargin"
-            from :15
-            to:10
+            from: 15
+            to: 10
             duration: 150
         }
 
 
     }
-
-
 
 }
 

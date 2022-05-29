@@ -9,22 +9,21 @@ import contrl_struct 1.0
 
 
 Item {
-
     DropShadow {
         id:shadow
-        anchors.fill: btn
-        horizontalOffset: 5
-        verticalOffset: 5
-        radius: btn_1_shadow_radius
+        anchors.fill: styleSelector
+        horizontalOffset: 1
+        verticalOffset: 1
+        radius: 8
         spread: 0.1
-        samples: btn_1_shadow_sample
-        color: btn_1_shadow_color
-        source: btn
+        samples: 18
+        color: "lightblue"
+        source: styleSelector
     }
-
     property bool stateVisible: false
     ComboBox{
         background: Rectangle {
+            radius: 10
             id:x
            gradient: Gradient {
                       GradientStop { position: 0.35; color: "#4c6cb0" }
@@ -81,7 +80,7 @@ Item {
                 id:i
                 //width: styleSelector.width -16
                 color: "transparent"
-                radius: 20
+//                radius: 20
 
             }
             highlighted: styleSelector.highlightedIndex === index
@@ -89,7 +88,6 @@ Item {
 
 
         popup: Popup{
-
 
             enter: Transition {
                 NumberAnimation { property: "height"; from: 0.0; to: styleSelector.height * 6; easing.type: Easing.InOutCirc; duration: 1000 }
@@ -106,10 +104,9 @@ Item {
 
 
             Component {
-                id: highlight
+                id: highlight            
                 Rectangle{
-
-
+                    radius: 10
                     Image {
                         id: image
                         opacity: 0
@@ -127,7 +124,6 @@ Item {
                         GradientStop { position: 0.0; color: "#00d4ff" }
                         GradientStop { position: 0.33; color: "#5079b3" }
                         GradientStop { position: 1.0; color: "#8b43a3" }
-
                     }
 
                     states: [
@@ -144,14 +140,12 @@ Item {
                             NumberAnimation { property: "opacity"; duration: 300}
                         }
 
-
                 }
 
             }
 
 
             contentItem: ListView {
-
                 id: listview
                 implicitHeight: popup.height
                 clip: true
@@ -163,14 +157,14 @@ Item {
                 boundsBehavior: ListView.StopAtBounds
 
                 anchors.top: parent.top
-                anchors.topMargin: 7.5
+                anchors.topMargin: 7.4
                 ScrollBar.vertical:ScrollBar {}
             }
             background: Rectangle {
                 anchors.top: parent.top
                 anchors.topMargin: 7
                 id : reccombo
-                //radius: 20
+                radius: 10
                 gradient: Gradient {
                     GradientStop { position: 0.35; color: "#4c6cb0" }
                     GradientStop { position: 1.0; color: "#00d4ff" }
@@ -185,10 +179,6 @@ Item {
 
 
     }
-
-
-
-
 
 }
 

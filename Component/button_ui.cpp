@@ -73,7 +73,6 @@ void button_UI::btn_1_shadow_col(QString color)
 
 
 
-
 qint16 button_UI::get_btn_1_wth()
 {
     return btn_1_width;
