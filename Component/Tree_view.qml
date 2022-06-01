@@ -19,6 +19,8 @@ Item {
         antialiasing: true
         highlightOnFocus: true
 
+
+
 //            headerDelegate: {
 
 //
@@ -98,9 +100,22 @@ Item {
 
 
             onClicked: {
+
+                try {
+                    treeEvent.onClicked(mymodel.data(currentIndex,"display"))
+                  }
+                  catch(e) {
+                    console.log(e);
+                    ;
+                  }
+
+                //console.log(currentIndex)
                 //console.log("curExpandedRowIndex is: ",__currentRow)
-                console.log("curIndexParentRow is: ",currentIndex.parent.row, "CurIndexChildrow: ",currentIndex.row,"CurRowindex: ",__currentRow)
-                treeEvent.onClicked()
+                //console.log("curIndexParentRow is: ",currentIndex.parent.row, "CurIndexChildrow: ",currentIndex.row,"CurRowindex: ",__currentRow)
+                //treeEvent.onClicked(mymodel.data(currentIndex,"display"))
+
+
+
             }
 
             onCurrentIndexChanged: {
@@ -109,6 +124,7 @@ Item {
             onRootIndexChanged: {
                 treeEvent.onRootIndexChanged()
             }
+
 
 
         }

@@ -51,7 +51,7 @@ Item {
         border.width: btn_1_border_width
         color: btn_1_bckg_colr
 
-
+        //button icon
         Image {
             id: btn_img
             width: 20
@@ -75,6 +75,7 @@ Item {
 
 
     }
+    //btn shadow
     DropShadow {
         id:shadow
         anchors.fill: btn
@@ -91,7 +92,7 @@ Item {
     MouseArea{
         anchors.fill: parent
         hoverEnabled: true
-
+        //on hover in button
         onEntered:{
             ani_col_gre.start()
             btn_txt.color="#fff"
@@ -101,6 +102,7 @@ Item {
 
 
         }
+        //on hover out button
         onExited: {
             ani_col_whi.start()
             btn_txt.color="#1aba1a"
@@ -134,7 +136,7 @@ Item {
     }
 
 
-
+     //rotate icon of button
     NumberAnimation {
         id:ani_rot
         target: btn_img

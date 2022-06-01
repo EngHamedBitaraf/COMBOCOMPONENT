@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     button *button_event=new button;
     combo_box_Events *combo_event = new combo_box_Events;
-    tree_view_events *tree_event = new tree_view_events;
+    tree_view_events *tree_event = new tree_view_events();
 
     qmlRegisterType<button_UI >("contrl_struct",1,0,"Button_UI");
 
@@ -46,15 +46,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     qml =new QQuickView(QUrl(QLatin1String("qrc:/main.qml")));
 
-    //qml treeview model
+    //send treeview model class to qml
     qml->engine()->rootContext()->setContextProperty("mymodel", mymodel);
-    //qml button class
+
+    //send button event class to qml
     qml->engine()->rootContext()->setContextProperty("button_wid", button_event);
 
+    //send button ui class to qml
     qml->engine()->rootContext()->setContextProperty("button_ui", button_ui);
 
+    //send combobox event class to qml
     qml->engine()->rootContext()->setContextProperty("comboEvent",combo_event);
 
+    //send treeview event class to qml
     qml->engine()->rootContext()->setContextProperty("treeEvent",tree_event);
 
     widget = QWidget::createWindowContainer(qml);

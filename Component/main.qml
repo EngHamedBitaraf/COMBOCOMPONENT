@@ -9,6 +9,7 @@ Item {
     id: main
     visible: true
     anchors.fill: parent
+    //background image
     Image {
         id: back
         source: "qrc:/gradient-colors-background-vector-22266648.jpg"
@@ -26,12 +27,12 @@ Item {
 //       combo_box.height = Height
 //   }
 
-    property int btn_1_width
-    property int btn_1_height
+    property int btn_1_width: button_ui.get_btn_1_wth()
+    property int btn_1_height: button_ui.get_btn_1_hght()
     Button_1{
         id:btn_1
-        width: 200
-        height: 50
+        width: btn_1_width
+        height: btn_1_height
         anchors.left: parent.left
         anchors.leftMargin: 10
         anchors.top: parent.top

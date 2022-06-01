@@ -36,7 +36,7 @@ Item {
         height: 50
 
 
-
+        //when items of combobox selected
         onActivated: {
             if (displayText === currentText){
 
@@ -76,6 +76,7 @@ Item {
                 elide: Text.ElideRight
                 verticalAlignment: Text.AlignVCenter
             }
+
             background: Rectangle {
                 id:i
                 //width: styleSelector.width -16
@@ -84,6 +85,7 @@ Item {
 
             }
             highlighted: styleSelector.highlightedIndex === index
+
         }
 
 
@@ -104,7 +106,7 @@ Item {
 
 
             Component {
-                id: highlight            
+                id: highlight
                 Rectangle{
                     radius: 10
                     Image {
@@ -148,6 +150,13 @@ Item {
             contentItem: ListView {
                 id: listview
                 implicitHeight: popup.height
+
+                delegate: Image {
+                    id: c
+                    source: "qrc:/kindpng.png"
+
+                }
+
                 clip: true
                 highlight: highlight
                 model:styleSelector.delegateModel

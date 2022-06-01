@@ -1,13 +1,15 @@
 #include "tree_view_events.h"
-#include "QDebug"
+#include <QDebug>
 tree_view_events::tree_view_events(QObject *parent) : QObject(parent)
 {
 
 }
 
-void tree_view_events::onClicked()
+void tree_view_events::onClicked(QString text)
 {
-qDebug() << "hi";
+    qDebug()<< text;
+
+
 }
 
 void tree_view_events::onCurrentIndexChanged()
@@ -19,3 +21,5 @@ void tree_view_events::onRootIndexChanged()
 {
 
 }
+
+
