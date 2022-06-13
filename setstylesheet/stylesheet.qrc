@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>buttons_stylesheet.qss</file>
+        <file>kindpng.png</file>
+    </qresource>
+</RCC>
