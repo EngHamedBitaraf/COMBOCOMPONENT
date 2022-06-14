@@ -11,7 +11,16 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Test Window</string>
+   <string>Accordion_In_Qt</string>
+  </property>
+  <property name="toolTip">
+   <string comment="why" extracomment="hi"/>
+  </property>
+  <property name="toolTipDuration">
+   <number>3</number>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QFormLayout" name="formLayout">
@@ -19,36 +28,7 @@
      <widget class="Section" name="setct" native="true">
       <property name="maximumSize">
        <size>
-        <width>300</width>
-        <height>16777215</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="pushButton">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>200</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>SomeButton</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QWidget" name="widget" native="true">
-      <property name="maximumSize">
-       <size>
-        <width>300</width>
+        <width>16777215</width>
         <height>16777215</height>
        </size>
       </property>
