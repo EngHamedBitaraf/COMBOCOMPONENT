@@ -11,7 +11,8 @@
         toggleAnimation = new QParallelAnimationGroup(this);
         contentArea = new QScrollArea(this);
         //contentArea->setStyleSheet("QScrollArea {border: none;}");
-        contentArea->setStyleSheet("QScrollArea {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 51, 102, 255), "
+        contentArea->setStyleSheet("QScrollArea {border-radius: 9px;background-color: qlineargradient(spread:pad,"
+                                   "x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 51, 102, 255),"
                                    "stop:0.18 rgba(23, 73, 120, 255),"
                                    "stop:0.36 rgba(45, 97, 138, 255)"
                                    "stop:0.54 rgba(70, 118, 155, 255)"

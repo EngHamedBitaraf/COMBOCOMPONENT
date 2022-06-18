@@ -24,6 +24,12 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QFormLayout" name="formLayout">
+    <property name="horizontalSpacing">
+     <number>5</number>
+    </property>
+    <property name="verticalSpacing">
+     <number>1</number>
+    </property>
     <item row="0" column="1">
      <widget class="Section" name="setct" native="true">
       <property name="maximumSize">

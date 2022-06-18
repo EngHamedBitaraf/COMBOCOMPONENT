@@ -13,15 +13,41 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
+
+
+//    QString btn_theme = "*[mandatoryField=\"true\"] {background: #ffffff;\n"
+//                            "color: white;\n"
+//                            "border: 1px solid white;\n"
+//                            "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,"
+//                            "stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+//                            "border-radius: 7px;\n"
+//                            "}\n"
+//                            "QPushButton:hover{\n"
+//                            "color: black;\n"
+//                            "border: 2px solid black;\n"
+//                            "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,"
+//                            "stop:0 rgba(161, 161, 156, 255)"
+//                            "stop:0.18 rgba(161, 161, 156, 255)"
+//                            "stop:0.36 rgba(177, 177, 172, 255)"
+//                            "stop:0.54 rgba(193, 192, 187, 255)"
+//                            "stop:0.72 rgba(208, 208, 202, 255)"
+//                            "stop:0.90 rgba(224, 224, 213, 255)"
+//                            "stop:1 rgba(240, 239, 226, 255));\n"
+//                            "}";
+
     Section* section = new Section(ui->centralWidget, "Section_2", 300);
     //section->setTitle("jjjj");
     ui->centralWidget->layout()->addWidget(section);
 
-    ui->setct->setTitle("secton_1");
+    ui->setct->setTitle("Secton_1");
     ui->setct->setDuration(300);
 
+    QLabel *label_2 = new QLabel;
+    label_2->setText("some text in section 2");
+    label_2->setStyleSheet("QLabel{color: white;}");
     auto* anyLayout = new QVBoxLayout();
-    anyLayout->addWidget(new QLabel("Some Text in Section 2", section));
+    anyLayout->addWidget(label_2);
     anyLayout->addWidget(new QPushButton("Button in Section 2", section));
     anyLayout->addWidget(new QPushButton("bye", section));
     anyLayout->addWidget(new QComboBox());
@@ -29,8 +55,12 @@ MainWindow::MainWindow(QWidget *parent) :
     Section* y = new Section(ui->centralWidget, "Section_3", 300);
     ui->centralWidget->layout()->addWidget(y);
 
+
+    QLabel *label_3 = new QLabel;
+    label_3->setText("some text in section 3");
+    label_3->setStyleSheet("QLabel{color: white;}");
     auto* mos = new QVBoxLayout();
-    mos->addWidget(new QLabel("Some Text in Section 3", y));
+    mos->addWidget(label_3);
     mos->addWidget(new QPushButton("Button in Section 3", y));
     mos->addWidget(new QPushButton("lie", y));
     mos->addWidget(new QComboBox());
@@ -41,27 +71,40 @@ MainWindow::MainWindow(QWidget *parent) :
     abbas->addItem("test_1");
     abbas->addItem("test_2");
     abbas->setMaximumWidth(100);
+    abbas->setMinimumHeight(40);
 
 
+    QLabel *label_1 = new QLabel;
+    label_1->setText("some text in section 1");
+    label_1->setStyleSheet("QLabel{color: white;}");
 
     QPushButton *mosi = new QPushButton;
-    mosi->setText("hi");
-    mosi->setStyleSheet("QPushButton {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 51, 102, 255), "
-                        "stop:0.18 rgba(43, 54, 56, 255),"
-                        "stop:0.36 rgba(56, 68, 69, 255)"
-                        "stop:0.54 rgba(68, 81, 82, 255)"
-                        "stop:0.72 rgba(81, 95, 95, 255)"
-                        "stop:0.90 rgba(93, 108, 108, 255)"
-                        "stop:1 rgba(106, 122, 121, 255));}");
-    mosi->setMaximumWidth(200);
 
+    mosi->setText("hi");
+//    mosi->setProperty("mandatoryField",true);
+//    mosi->setStyleSheet(btn_theme);
+    //mosi->setMaximumWidth(200);
+    mosi->setMinimumHeight(40);
+
+    QPushButton *boos = new QPushButton;
+
+    boos->setText("jy");
+//    boos->setProperty("mandatoryField",true);
+//    boos->setStyleSheet(btn_theme);
+    boos->setMinimumHeight(40);
+
+    QPushButton *loos = new QPushButton;
+
+    loos->setText("my");
+//    loos->setProperty("mandatoryField",true);
+//    loos->setStyleSheet(btn_theme);
+    loos->setMinimumHeight(40);
 
     auto* x = new QVBoxLayout();
-    x->addWidget(new QLabel("Some Text in Section 1", ui->setct));
-    x->addWidget(new QPushButton("Button in Section 1", ui->setct));
+    x->addWidget(label_1);
+    x->addWidget(boos);
     x->addWidget(mosi);
-    x->addWidget(new QPushButton("my", ui->setct));
-    x->addWidget(new QPushButton("why", ui->setct));
+    x->addWidget(loos);
     x->addWidget(abbas);
 
 
@@ -69,6 +112,7 @@ MainWindow::MainWindow(QWidget *parent) :
     section->setContentLayout(*anyLayout);
     ui->setct->setContentLayout(*x);
     y->setContentLayout(*mos);
+
 }
 
 MainWindow::~MainWindow()

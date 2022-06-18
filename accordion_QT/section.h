@@ -1,5 +1,3 @@
-
-
 #ifndef SECTION_H
 #define SECTION_H
 
@@ -9,6 +7,7 @@
 #include <QScrollArea>
 #include <QToolButton>
 #include <QWidget>
+
 
     class Section : public QWidget
     {
