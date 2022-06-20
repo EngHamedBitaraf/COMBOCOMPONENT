@@ -82,7 +82,6 @@ int main(int argc, char *argv[])
                     "}\n"
                         );
 
-
     MainWindow w;
     w.show();
 

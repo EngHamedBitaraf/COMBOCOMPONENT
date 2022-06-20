@@ -5,6 +5,8 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QComboBox>
+#include <QTreeView>
+#include <TreeViewModel.h>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -12,9 +14,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-
-
 
 //    QString btn_theme = "*[mandatoryField=\"true\"] {background: #ffffff;\n"
 //                            "color: white;\n"
@@ -100,12 +99,61 @@ MainWindow::MainWindow(QWidget *parent) :
 //    loos->setStyleSheet(btn_theme);
     loos->setMinimumHeight(40);
 
+    QTreeView* hey = new QTreeView;
+    TreeViewModel* mymodel = new TreeViewModel;
+    hey->setModel(mymodel);
+    hey->setHeaderHidden(true);
+    hey->setMinimumHeight(225);
+    hey->setAnimated(true);
+
+    hey->setStyleSheet("QTreeView {\n"
+                       "alternate-background-color: yellow;\n"
+                       "background-color: gray"
+                        "}\n"
+
+                       "QTreeView:item {\n"
+                       "border-top-color: transparent;\n"
+                       "border-bottom-color: transparent;\n"
+                        "}\n"
+
+                       "QTreeView:item:hover {\n"
+                       "background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0,"
+                       "stop:0 rgba(161, 161, 156, 255)"
+                       "stop:0.18 rgba(161, 161, 156, 255)"
+                       "stop:0.36 rgba(177, 177, 172, 255)"
+                       "stop:0.54 rgba(193, 192, 187, 255)"
+                       "stop:0.72 rgba(208, 208, 202, 255)"
+                       "stop:0.90 rgba(224, 224, 213, 255)"
+                       "stop:1 rgba(240, 239, 226, 255));\n"
+                       "border: 1px solid #bfcde4;\n"
+                        "}\n"
+
+                       "QTreeView:item:selected {\n"
+                       "border: 1px solid white;\n"
+                        "}\n"
+
+                       "QTreeView:item:selected:active{\n"
+                       "background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+                       "stop: 0 #6ea1f1, stop: 1 #567dbc);\n"
+                        "}\n"
+
+                       "QTreeView:item:selected:!active {\n"
+                       "background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
+                       "stop: 0 #6b9be8, stop: 1 #577fbf);\n"
+                        "}\n"
+
+                         );
+
+
+
+
     auto* x = new QVBoxLayout();
     x->addWidget(label_1);
     x->addWidget(boos);
     x->addWidget(mosi);
     x->addWidget(loos);
     x->addWidget(abbas);
+    x->addWidget(hey);
 
 
 

@@ -13,10 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+        TreeViewModel.cpp \
         mainwindow.cpp \
         section.cpp
 
 HEADERS  += mainwindow.h \
+    TreeViewModel.h \
     section.h
 
 FORMS    += mainwindow.ui
